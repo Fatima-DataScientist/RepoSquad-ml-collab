@@ -1,0 +1,33 @@
+schema: '2.0'
+stages:
+  train:
+    cmd: python -m reposquad_ml_collab.modeling.pipeline
+    deps:
+    - path: configs/params.yaml
+      hash: md5
+      md5: 83006e76764bab4f9511de76c0560edc
+      size: 111
+    - path: data/raw/playground-series-s5e8/train.csv
+      hash: md5
+      md5: 3dbbda6097f07f31e644703b55e4e59f
+      size: 65698328
+    - path: src/reposquad_ml_collab/modeling/pipeline.py
+      hash: md5
+      md5: 2b058272f170ee5543b8e79c34b35940
+      size: 2035
+    params:
+      configs/params.yaml:
+        data.random_state: 42
+        data.test_size: 0.2
+        model.max_depth: 10
+        model.n_estimators: 100
+        model.random_state: 42
+    outs:
+    - path: models/model.joblib
+      hash: md5
+      md5: 2775aa4dd91623bcbe0bc582718a4685
+      size: 10724633
+    - path: reports/metrics.json
+      hash: md5
+      md5: e369293529a31b945569949ba72f08ee
+      size: 27

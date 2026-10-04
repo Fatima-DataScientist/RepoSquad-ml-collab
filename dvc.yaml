@@ -1,0 +1,18 @@
+stages:
+  train:
+    cmd: python -m reposquad_ml_collab.modeling.pipeline
+    deps:
+      - data/raw/playground-series-s5e8/train.csv
+      - src/reposquad_ml_collab/modeling/pipeline.py
+      - configs/params.yaml
+    params:
+      - configs/params.yaml:
+          - data.test_size
+          - data.random_state
+          - model.n_estimators
+          - model.max_depth
+          - model.random_state
+    outs:
+      - models/model.joblib
+    metrics:
+      - reports/metrics.json
