@@ -6,14 +6,14 @@ Git-based collaborative machine learning project using GitHub, DVC, reproducible
 ## Team
 
 - Person 1: Fatima Tu Zahra — Model Owner + Platform/CI
-- Person 2: [Teammate Name] — Data Owner + Platform/DVC
+- Person 2: Fatima Anjum — Data Owner + Platform/DVC
 
 ## Dataset
 
 GNHK Dataset
 
 Source:
-https://www.kaggle.com/datasets/evandu/gnhk-dataset
+https://www.kaggle.com/competitions/playground-series-s5e8/data
 
 ## Workflow
 
