@@ -1,0 +1,34 @@
+stages:
+  prepare:
+    cmd: python src/prepare.py
+    deps:
+      - src/prepare.py
+      - data/raw/playground-series-s5e8/train.csv
+    params:
+      - seed
+      - data
+      - split
+    outs:
+      - data/processed
+  train:
+    cmd: python src/train.py
+    deps:
+      - src/train.py
+      - data/processed
+    params:
+      - seed
+      - data.target
+      - train
+    outs:
+      - models/model.pkl
+  evaluate:
+    cmd: python src/evaluate.py
+    deps:
+      - src/evaluate.py
+      - models/model.pkl
+      - data/processed
+    params:
+      - data.target
+    metrics:
+      - metrics.json:
+          cache: false
