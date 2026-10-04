@@ -189,3 +189,7 @@ cython_debug/
 
 # PyPI configuration file
 .pypirc
+
+.dvc/cache/
+.dvc/tmp/
+.dvc/config.local
